@@ -15,13 +15,13 @@ var sassPaths = [
     'bower_components/motion-ui/src'
 ];
 
-var reactPath = 'public/javascripts/';
+var reactPath = './public/javascripts/app.js';
 
 gulp.task('clean', function(done){
    del(['build'], done);
 });
 
-gulp.task('sass', ['clean'], function() {
+gulp.task('sass', function() {
     return gulp.src('public/stylesheets/app.scss')
         .pipe(plugins.sass({
                 includePaths: sassPaths
@@ -33,12 +33,12 @@ gulp.task('sass', ['clean'], function() {
         .pipe(gulp.dest('build'));
 });
 
-gulp.task('react', ['clean'], function() {
+gulp.task('react', function() {
     browserify(reactPath)
         .transform(reactify)
         .bundle()
         .pipe(source('bundle.js'))
-        .pipe(gulp.dest('./build/'));
+        .pipe(gulp.dest('build'));
 });
 
 gulp.task('watch', function(){
