@@ -1,9 +1,18 @@
 {
   "name": "recipes_app",
+  "description": "An app to find and store recipes based on ingredients.",
+  "author": "Geoffrey Gross",
   "version": "0.0.0",
+  "main": "public/javascripts/app.js",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GGross5213/recipes_app.git"
+  },
   "scripts": {
-    "start": "node ./bin/www"
+    "startServer": "node ./bin/www",
+    "start": "gulp",
+    "build": "gulp sass react"
   },
   "dependencies": {
     "body-parser": "~1.13.2",
@@ -13,6 +22,28 @@
     "hbs": "~3.1.0",
     "morgan": "~1.6.1",
     "node-sass-middleware": "0.8.0",
-    "serve-favicon": "~2.3.0"
+    "serve-favicon": "~2.3.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "react": "0.14.0",
+    "react-dom": "0.14.3",
+    "underscore": "^1.7.0",
+    "superagent": "^1.5.0",
+    "moment": "2.10.6",
+    "flux": "^2.0.0",
+    "jquery": "1.11.3",
+    "unirest": "0.4.2"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-load-plugins": "^1.1.0",
+    "gulp-sass": "^2.1.0",
+    "browserify": "~6.2.0",
+    "envify": "~3.0.0",
+    "react": "0.14.0",
+    "reactify": "^0.15",
+    "watchify": "~2.1.0",
+    "vinyl-source-stream": "1.1.0",
+    "del": "2.2.0"
   }
 }
